@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سيف بن حسين الغامدي | بورتفوليو</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Reem+Kufi:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f1e8;
+    --bg-alt: #ebe4d4;
+    --ink: #1a2820;
+    --ink-soft: #3d4a3f;
+    --accent: #5b6f4a;
+    --accent-deep: #3a4a30;
+    --gold: #b8893b;
+    --gold-soft: #d4a85a;
+    --line: rgba(26, 40, 32, 0.12);
+    --shadow: 0 30px 60px -20px rgba(58, 74, 48, 0.18);
+    --serif: 'Cormorant Garamond', 'Amiri', serif;
+    --sans: 'Manrope', sans-serif;
+    --arabic-display: 'Reem Kufi', sans-serif;
+    --arabic-serif: 'Amiri', serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--arabic-serif);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(184, 137, 59, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(91, 111, 74, 0.10) 0%, transparent 45%);
+    min-height: 100vh;
+  }
+
+  [data-lang="en"] body { font-family: var(--sans); }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%235b6f4a' stroke-width='0.4' opacity='0.15'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z'/%3E%3Cpath d='M30 15L45 30L30 45L15 30Z'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .lang-toggle {
+    position: fixed;
+    top: 30px;
+    inset-inline-end: 30px;
+    z-index: 100;
+    background: var(--ink);
+    color: var(--bg);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+  }
+
+  .lang-toggle:hover { background: var(--gold); transform: translateY(-2px); }
+
+  nav {
+    position: fixed;
+    top: 30px;
+    inset-inline-start: 30px;
+    z-index: 100;
+    display: flex;
+    gap: 4px;
+    background: rgba(245, 241, 232, 0.85);
+    backdrop-filter: blur(20px);
+    padding: 8px 12px;
+    border-radius: 50px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    flex-wrap: wrap;
+    max-width: calc(100vw - 200px);
+  }
+
+  nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 7px 12px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  [data-lang="ar"] nav a { font-family: var(--arabic-display); font-size: 12px; }
+  nav a:hover { background: var(--ink); color: var(--bg); }
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 8vw 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    opacity: 0;
+    animation: fadeUp 1s 0.2s forwards;
+  }
+
+  [data-lang="ar"] .hero-eyebrow { font-family: var(--arabic-display); letter-spacing: 2px; font-size: 14px; }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: var(--arabic-display);
+    font-size: clamp(48px, 9vw, 130px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -2px;
+    color: var(--ink);
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeUp 1.2s 0.4s forwards;
+  }
+
+  [data-lang="en"] .hero h1 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .hero-title {
+    font-family: var(--arabic-display);
+    font-size: clamp(18px, 2.4vw, 26px);
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeUp 1.2s 0.5s forwards;
+  }
+
+  [data-lang="en"] .hero-title { font-family: var(--serif); font-style: italic; }
+
+  .hero-tagline {
+    font-family: var(--arabic-serif);
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 400;
+    color: var(--ink-soft);
+    max-width: 750px;
+    line-height: 1.7;
+    margin-bottom: 50px;
+    opacity: 0;
+    animation: fadeUp 1.2s 0.6s forwards;
+  }
+
+  [data-lang="en"] .hero-tagline { font-family: var(--serif); font-style: italic; }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+    opacity: 0;
+    animation: fadeUp 1.2s 0.8s forwards;
+  }
+
+  .meta-item { display: flex; flex-direction: column; gap: 6px; }
+
+  .meta-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  [data-lang="ar"] .meta-label { font-family: var(--arabic-display); letter-spacing: 1px; font-size: 12px; }
+
+  .meta-value {
+    font-family: var(--arabic-display);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  [data-lang="en"] .meta-value { font-family: var(--sans); }
+
+  .ornament {
+    position: absolute;
+    inset-inline-end: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 280px;
+    height: 280px;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .ornament svg { width: 100%; height: 100%; animation: rotate 60s linear infinite; }
+
+  @keyframes rotate { to { transform: rotate(360deg); } }
+
+  section {
+    padding: 100px 8vw;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 70px;
+  }
+
+  .section-num {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: var(--arabic-display);
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -1px;
+  }
+
+  [data-lang="en"] .section-title {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .section-line { flex: 1; height: 1px; background: var(--line); }
+
+  .about {
+    background: var(--bg-alt);
+    border-block: 1px solid var(--line);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-text {
+    font-size: 18px;
+    line-height: 1.9;
+    color: var(--ink-soft);
+  }
+
+  [data-lang="en"] .about-text { font-family: var(--serif); font-size: 19px; }
+
+  .about-text p { margin-bottom: 20px; }
+
+  .quote-block {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 50px 40px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: var(--shadow);
+  }
+
+  .quote-block::before {
+    content: '\201C';
+    position: absolute;
+    top: 20px;
+    inset-inline-start: 30px;
+    font-size: 80px;
+    color: var(--gold);
+    font-family: var(--serif);
+    opacity: 0.6;
+    line-height: 1;
+  }
+
+  .quote-text {
+    font-family: var(--arabic-serif);
+    font-size: 22px;
+    line-height: 1.7;
+    margin-top: 50px;
+    font-weight: 400;
+  }
+
+  [data-lang="en"] .quote-text { font-family: var(--serif); font-style: italic; font-size: 24px; }
+
+  .quote-source {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(245, 241, 232, 0.2);
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+  }
+
+  [data-lang="ar"] .quote-source { font-family: var(--arabic-display); letter-spacing: 1px; }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 50px;
+  }
+
+  .value-card {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 30px 28px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: var(--gold);
+  }
+
+  .value-name {
+    font-family: var(--arabic-display);
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  [data-lang="en"] .value-name { font-family: var(--serif); font-style: italic; }
+
+  .value-desc {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  [data-lang="en"] .value-desc { font-family: var(--sans); font-size: 14px; }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .edu-card {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 36px 30px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+  }
+
+  .edu-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    width: 4px;
+    height: 0;
+    background: var(--gold);
+    transition: height 0.4s ease;
+  }
+
+  .edu-card:hover { transform: translateY(-8px); box-shadow: var(--shadow); border-color: var(--gold); }
+  .edu-card:hover::before { height: 100%; }
+
+  .edu-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    color: var(--accent);
+  }
+
+  .edu-level {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  [data-lang="ar"] .edu-level { font-family: var(--arabic-display); letter-spacing: 1px; font-size: 13px; }
+
+  .edu-degree {
+    font-family: var(--arabic-display);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  [data-lang="en"] .edu-degree { font-family: var(--serif); font-weight: 600; }
+
+  .edu-uni {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  [data-lang="en"] .edu-uni { font-family: var(--sans); }
+
+  .edu-desc {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  [data-lang="en"] .edu-desc { font-family: var(--sans); }
+
+  .edu-status {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  [data-lang="ar"] .edu-status { font-family: var(--arabic-display); font-size: 12px; }
+
+  .edu-status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .edu-card.in-progress .edu-status::before {
+    background: var(--gold);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  .experience {
+    background: var(--bg-alt);
+    border-block: 1px solid var(--line);
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 950px;
+    margin: 0 auto;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 20px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--line);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-inline-start: 70px;
+    padding-bottom: 50px;
+  }
+
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute;
+    inset-inline-start: 12px;
+    top: 8px;
+    width: 18px;
+    height: 18px;
+    background: var(--bg-alt);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .timeline-dot::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+
+  .timeline-item:hover .timeline-dot::after { transform: scale(1); }
+
+  .timeline-period {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  [data-lang="ar"] .timeline-period { font-family: var(--arabic-display); letter-spacing: 1px; font-size: 14px; }
+
+  .timeline-role {
+    font-family: var(--arabic-display);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  [data-lang="en"] .timeline-role { font-family: var(--serif); font-style: italic; }
+
+  .timeline-org {
+    font-family: var(--arabic-serif);
+    font-size: 16px;
+    color: var(--accent);
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+
+  [data-lang="en"] .timeline-org { font-family: var(--sans); font-weight: 600; }
+
+  .timeline-desc {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    max-width: 700px;
+  }
+
+  [data-lang="en"] .timeline-desc { font-family: var(--sans); }
+
+  .timeline-list {
+    list-style: none;
+    margin-top: 14px;
+    padding-inline-start: 0;
+  }
+
+  .timeline-list li {
+    position: relative;
+    padding-inline-start: 22px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  [data-lang="en"] .timeline-list li { font-family: var(--sans); }
+
+  .timeline-list li::before {
+    content: '\25C6';
+    position: absolute;
+    inset-inline-start: 0;
+    top: 1px;
+    color: var(--gold);
+    font-size: 10px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .skill-category {
+    background: var(--bg-alt);
+    padding: 36px 32px;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+  }
+
+  .skill-category h3 {
+    font-family: var(--arabic-display);
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+  }
+
+  [data-lang="en"] .skill-category h3 { font-family: var(--serif); font-style: italic; }
+
+  .skill-category h3::before {
+    content: '';
+    width: 22px;
+    height: 22px;
+    background: var(--gold);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    flex-shrink: 0;
+  }
+
+  .skill-desc {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  [data-lang="en"] .skill-desc { font-family: var(--sans); }
+
+  .skill-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skill-list li {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-family: var(--arabic-serif);
+    font-size: 14px;
+    color: var(--ink-soft);
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+
+  [data-lang="en"] .skill-list li { font-family: var(--sans); font-size: 13px; }
+
+  .skill-list li:hover {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+    transform: translateY(-2px);
+  }
+
+  .memberships-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .membership-block h3 {
+    font-family: var(--arabic-display);
+    font-size: 24px;
+    color: var(--ink);
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+    font-weight: 600;
+  }
+
+  [data-lang="en"] .membership-block h3 { font-family: var(--serif); font-style: italic; }
+
+  .membership-list {
+    list-style: none;
+  }
+
+  .membership-list li {
+    background: var(--bg);
+    border-inline-start: 3px solid var(--gold);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+
+  [data-lang="en"] .membership-list li { font-family: var(--sans); font-size: 14px; }
+
+  .membership-list li:hover {
+    border-inline-start-width: 6px;
+    background: var(--bg-alt);
+  }
+
+  .membership-list li strong {
+    color: var(--ink);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--arabic-display);
+  }
+
+  [data-lang="en"] .membership-list li strong { font-family: var(--serif); font-weight: 600; }
+
+  .output {
+    background: var(--bg-alt);
+    border-block: 1px solid var(--line);
+  }
+
+  .output-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+
+  .output-col h3 {
+    font-family: var(--arabic-display);
+    font-size: 26px;
+    color: var(--ink);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 600;
+  }
+
+  [data-lang="en"] .output-col h3 { font-family: var(--serif); font-style: italic; }
+
+  .output-col h3 .num {
+    width: 44px;
+    height: 44px;
+    background: var(--gold);
+    color: var(--ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  .output-list {
+    list-style: none;
+  }
+
+  .output-list li {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  [data-lang="en"] .output-list li { font-family: var(--sans); font-size: 15px; }
+
+  .output-list li:last-child { border-bottom: none; }
+
+  .output-list li::before {
+    content: '\2192';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  [dir="rtl"] .output-list li::before { content: '\2190'; }
+
+  .output-list li strong {
+    color: var(--ink);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--arabic-display);
+  }
+
+  [data-lang="en"] .output-list li strong { font-family: var(--serif); font-weight: 600; }
+
+  .awards-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 60px;
+  }
+
+  .award-block {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 40px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .award-block::after {
+    content: '';
+    position: absolute;
+    top: -40px;
+    inset-inline-end: -40px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+    opacity: 0.3;
+  }
+
+  .award-block h3 {
+    font-family: var(--arabic-display);
+    font-size: 24px;
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(245, 241, 232, 0.2);
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  [data-lang="en"] .award-block h3 { font-family: var(--serif); font-style: italic; }
+
+  .award-list { list-style: none; position: relative; z-index: 1; }
+
+  .award-list li {
+    padding: 14px 0;
+    font-size: 15px;
+    line-height: 1.7;
+    border-bottom: 1px solid rgba(245, 241, 232, 0.1);
+  }
+
+  [data-lang="en"] .award-list li { font-family: var(--sans); font-size: 14px; }
+
+  .award-list li:last-child { border-bottom: none; }
+
+  .award-list li strong {
+    color: var(--gold-soft);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .courses-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .course-tab {
+    background: transparent;
+    border: 1px solid var(--line);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: var(--arabic-display);
+    font-size: 14px;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+
+  [data-lang="en"] .course-tab { font-family: var(--sans); }
+
+  .course-tab:hover { border-color: var(--gold); color: var(--ink); }
+
+  .course-tab.active {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+
+  .course-panel { display: none; }
+  .course-panel.active { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .course-item {
+    background: var(--bg-alt);
+    padding: 16px 20px;
+    border-radius: 4px;
+    border-inline-start: 3px solid var(--gold);
+    font-size: 15px;
+    color: var(--ink);
+    transition: all 0.3s ease;
+  }
+
+  [data-lang="en"] .course-item { font-family: var(--sans); font-size: 14px; }
+
+  .course-item:hover {
+    background: var(--ink);
+    color: var(--bg);
+    transform: translateY(-2px);
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 60px;
+  }
+
+  .stat {
+    padding: 50px 30px;
+    text-align: center;
+    border-inline-end: 1px solid rgba(245, 241, 232, 0.1);
+    transition: background 0.3s ease;
+  }
+
+  .stat:last-child { border-inline-end: none; }
+  .stat:hover { background: var(--accent-deep); }
+
+  .stat-number {
+    font-family: var(--serif);
+    font-size: 60px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+
+  .stat-label {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--bg);
+    opacity: 0.85;
+  }
+
+  [data-lang="ar"] .stat-label { font-family: var(--arabic-display); letter-spacing: 1px; font-size: 14px; }
+
+  .contact {
+    text-align: center;
+    padding: 130px 8vw;
+    background: linear-gradient(135deg, var(--ink) 0%, var(--accent-deep) 100%);
+    color: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23b8893b' stroke-width='0.5' opacity='0.15'%3E%3Cpath d='M50 0L100 50L50 100L0 50Z'/%3E%3Cpath d='M50 25L75 50L50 75L25 50Z'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+  }
+
+  .contact > * { position: relative; z-index: 1; }
+
+  .contact h2 {
+    font-family: var(--arabic-display);
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+
+  [data-lang="en"] .contact h2 { font-family: var(--serif); font-style: italic; }
+
+  .contact p {
+    font-family: var(--arabic-serif);
+    font-size: 20px;
+    max-width: 650px;
+    margin: 0 auto 50px;
+    opacity: 0.85;
+    line-height: 1.7;
+  }
+
+  [data-lang="en"] .contact p { font-family: var(--serif); font-size: 22px; }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .contact-btn {
+    background: transparent;
+    color: var(--bg);
+    border: 1px solid var(--gold);
+    padding: 16px 30px;
+    border-radius: 50px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  [data-lang="ar"] .contact-btn { font-family: var(--arabic-display); letter-spacing: 1px; font-size: 14px; }
+
+  .contact-btn:hover {
+    background: var(--gold);
+    color: var(--ink);
+    transform: translateY(-3px);
+  }
+
+  footer {
+    padding: 40px 8vw;
+    text-align: center;
+    background: var(--ink);
+    color: var(--bg);
+    font-family: var(--sans);
+    font-size: 13px;
+    opacity: 0.8;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  [data-lang="ar"] footer { font-family: var(--arabic-serif); font-size: 15px; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .cert-card {
+    background: var(--bg-alt);
+    padding: 20px 24px;
+    border-radius: 4px;
+    border-inline-start: 3px solid var(--gold);
+    transition: all 0.3s ease;
+  }
+
+  .cert-card:hover {
+    background: var(--ink);
+    color: var(--bg);
+    transform: translateY(-3px);
+  }
+
+  .cert-card:hover .cert-name { color: var(--bg); }
+  .cert-card:hover .cert-issuer { color: var(--gold-soft); }
+
+  .cert-name {
+    font-family: var(--arabic-display);
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  [data-lang="en"] .cert-name { font-family: var(--serif); font-weight: 600; }
+
+  .cert-issuer {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  [data-lang="en"] .cert-issuer { font-family: var(--sans); }
+
+  .section-subtitle {
+    font-family: var(--arabic-display);
+    font-size: 28px;
+    color: var(--ink);
+    margin-bottom: 30px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+    font-weight: 600;
+  }
+
+  [data-lang="en"] .section-subtitle { font-family: var(--serif); font-style: italic; }
+
+  @media (max-width: 968px) {
+    .about-grid, .skills-grid, .memberships-grid, .output-grid, .awards-section { grid-template-columns: 1fr; gap: 40px; }
+    .edu-grid, .values-grid { grid-template-columns: 1fr; }
+    .course-panel.active { grid-template-columns: 1fr !important; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-inline-end: none; }
+    .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid rgba(245, 241, 232, 0.1); }
+    nav { display: none; }
+    .ornament { display: none; }
+    .hero { padding: 100px 6vw 60px; }
+    section { padding: 70px 6vw; }
+    .lang-toggle { top: 20px; inset-inline-end: 20px; padding: 10px 18px; font-size: 12px; }
+    footer { flex-direction: column; }
+  }
+
+  @media (max-width: 600px) {
+    .stats { grid-template-columns: 1fr; }
+    .stat { border-inline-end: none !important; border-bottom: 1px solid rgba(245, 241, 232, 0.1); }
+    .hero-meta { gap: 20px; }
+    .timeline-item { padding-inline-start: 50px; }
+  }
+
+  [data-lang="ar"] .en { display: none; }
+  [data-lang="en"] .ar { display: none; }
+</style>
+</head>
+<body>
+
+<button class="lang-toggle" onclick="toggleLang()">
+  <span class="ar">English</span>
+  <span class="en">العربية</span>
+</button>
+
+<nav>
+  <a href="#about"><span class="ar">عني</span><span class="en">About</span></a>
+  <a href="#education"><span class="ar">التعليم</span><span class="en">Education</span></a>
+  <a href="#experience"><span class="ar">الخبرة</span><span class="en">Experience</span></a>
+  <a href="#skills"><span class="ar">المهارات</span><span class="en">Skills</span></a>
+  <a href="#output"><span class="ar">النتاج</span><span class="en">Output</span></a>
+  <a href="#courses"><span class="ar">الدورات</span><span class="en">Courses</span></a>
+  <a href="#contact"><span class="ar">تواصل</span><span class="en">Contact</span></a>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="ar">مختص حوكمة وأمانة مجالس · استراتيجي</span>
+    <span class="en">Governance & Board Secretariat Specialist · Strategist</span>
+  </div>
+
+  <h1>
+    <span class="ar">سيف الغامدي</span>
+    <span class="en">Saif Alghamdi</span>
+  </h1>
+
+  <div class="hero-title">
+    <span class="ar">سيف بن حسين الغامدي</span>
+    <span class="en">Saif bin Hussein Alghamdi</span>
+  </div>
+
+  <div class="hero-tagline">
+    <span class="ar">«الحوكمة ليست أوراقاً تُكتب، بل ممارسةٌ تُفعَّل». مختصٌّ في تحويل الرؤى إلى أنظمة تنفيذية قابلة للقياس، وبناء وثائق الحوكمة، ومصفوفات الصلاحيات، وأمانة المجالس واللجان.</span>
+    <span class="en">"Governance is not paperwork — it is activated practice." A specialist in translating vision into measurable executive systems, building governance frameworks, authority matrices, and serving as secretary to boards and committees.</span>
+  </div>
+
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-label"><span class="ar">التخصص</span><span class="en">Specialty</span></span>
+      <span class="meta-value"><span class="ar">حوكمة · فقه وأصوله</span><span class="en">Governance · Fiqh</span></span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label"><span class="ar">القطاع</span><span class="en">Sector</span></span>
+      <span class="meta-value"><span class="ar">القطاع الخيري وغير الربحي</span><span class="en">Non-Profit & Philanthropy</span></span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label"><span class="ar">الموقع</span><span class="en">Location</span></span>
+      <span class="meta-value"><span class="ar">الدمام، المنطقة الشرقية</span><span class="en">Dammam, Eastern Province</span></span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label"><span class="ar">الجوال</span><span class="en">Mobile</span></span>
+      <span class="meta-value">0546104925</span>
+    </div>
+  </div>
+
+  <div class="ornament">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#5b6f4a" stroke-width="0.8">
+        <circle cx="100" cy="100" r="90"/>
+        <circle cx="100" cy="100" r="70"/>
+        <circle cx="100" cy="100" r="50"/>
+        <path d="M100 10 L115 50 L160 50 L125 80 L140 125 L100 100 L60 125 L75 80 L40 50 L85 50 Z"/>
+        <path d="M100 30 L110 65 L145 65 L118 88 L128 123 L100 105 L72 123 L82 88 L55 65 L90 65 Z" transform="rotate(36 100 100)"/>
+        <path d="M100 50 L107 75 L132 75 L113 91 L120 116 L100 102 L80 116 L87 91 L68 75 L93 75 Z" transform="rotate(72 100 100)"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <h2 class="section-title"><span class="ar">الملخص التنفيذي</span><span class="en">Executive Summary</span></h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p class="ar">أخصائي استراتيجي وحوكمة، يتميز بخبرة متقدمة في بناء منظومات الحوكمة، وتطوير اللوائح والسياسات، وإدارة أمانة المجالس. عملت على تحويل الرؤى إلى أنظمة تنفيذية قابلة للقياس، وبناء وثائق الحوكمة ومصفوفات الصلاحيات، وربط الأداء المؤسسي بالاستراتيجية.</p>
+      <p class="ar">أؤمن أن الحوكمة ليست أوراقاً تُكتب بل ممارسةٌ تُفعَّل، تنعكس على الواقع المؤسسي، وتُحقق أثراً مستداماً.</p>
+
+      <p class="en">A strategy and governance specialist with advanced expertise in building governance ecosystems, developing regulations and policies, and managing board secretariat functions. My work centers on translating vision into measurable executive systems — drafting governance documents, designing authority matrices, and tying institutional performance to strategy.</p>
+      <p class="en">I believe governance is not paperwork to be filed; it is practice to be activated, reflected in institutional reality, and delivering sustainable impact.</p>
+    </div>
+
+    <div class="quote-block reveal">
+      <p class="quote-text">
+        <span class="ar">الحوكمة ليست أوراقاً تُكتب، بل ممارسةٌ تُفعَّل.</span>
+        <span class="en">Governance is not paperwork to be filed — it is practice to be activated.</span>
+      </p>
+      <p class="quote-source">
+        <span class="ar">— الفلسفة المهنية</span>
+        <span class="en">— Working Philosophy</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <h3 class="value-name"><span class="ar">الالتزام</span><span class="en">Commitment</span></h3>
+      <p class="value-desc">
+        <span class="ar">أتحمل مسؤولياتي بجدية وأحرص على إنجاز العمل في وقته وبجودة عالية.</span>
+        <span class="en">I shoulder responsibility with seriousness and deliver work on time at the highest quality.</span>
+      </p>
+    </div>
+    <div class="value-card reveal">
+      <h3 class="value-name"><span class="ar">الإتقان</span><span class="en">Mastery</span></h3>
+      <p class="value-desc">
+        <span class="ar">أنفذ المهام بدقة واهتمام بالتفاصيل لضمان أفضل النتائج.</span>
+        <span class="en">Tasks executed with precision and attention to detail to secure the finest outcomes.</span>
+      </p>
+    </div>
+    <div class="value-card reveal">
+      <h3 class="value-name"><span class="ar">التفكير المنظومي</span><span class="en">Systems Thinking</span></h3>
+      <p class="value-desc">
+        <span class="ar">أرى الصورة الكاملة وأسنّ الأنظمة والسياسات وأعكسها على الواقع، لتحقيق أثر مستدام.</span>
+        <span class="en">Seeing the whole picture, codifying systems and policies, and reflecting them onto reality for lasting impact.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <h2 class="section-title"><span class="ar">التعليم والمؤهلات</span><span class="en">Education</span></h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <svg class="edu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+      </svg>
+      <div class="edu-level"><span class="ar">بكالوريوس · 2018–2021</span><span class="en">Bachelor's · 2018–2021</span></div>
+      <h3 class="edu-degree"><span class="ar">الشريعة</span><span class="en">Sharia</span></h3>
+      <p class="edu-uni"><span class="ar">جامعة الإمام عبدالرحمن بن فيصل</span><span class="en">Imam Abdulrahman Bin Faisal University</span></p>
+      <p class="edu-desc">
+        <span class="ar">مع مرتبة الشرف. تأسيس متين في علوم الشريعة الإسلامية.</span>
+        <span class="en">Graduated with Honors. Solid foundation in the Islamic legal sciences.</span>
+      </p>
+      <div class="edu-status">
+        <span class="ar">مكتمل · مرتبة الشرف</span><span class="en">Completed · Honors</span>
+      </div>
+    </div>
+
+    <div class="edu-card in-progress reveal">
+      <svg class="edu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+      </svg>
+      <div class="edu-level"><span class="ar">ماجستير · 2023–الآن</span><span class="en">Master's · 2023–Present</span></div>
+      <h3 class="edu-degree"><span class="ar">الفقه وأصوله</span><span class="en">Fiqh & Usul al-Fiqh</span></h3>
+      <p class="edu-uni"><span class="ar">جامعة الملك فيصل</span><span class="en">King Faisal University</span></p>
+      <p class="edu-desc">
+        <span class="ar">رسالة الماجستير: «مجلس نظارة الوقف — دراسة فقهية نظامية».</span>
+        <span class="en">Master's thesis: "The Waqf Trustee Board — A Jurisprudential and Regulatory Study."</span>
+      </p>
+      <div class="edu-status">
+        <span class="ar">قيد الدراسة</span><span class="en">In Progress</span>
+      </div>
+    </div>
+
+    <div class="edu-card reveal">
+      <svg class="edu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+      </svg>
+      <div class="edu-level"><span class="ar">دبلوم · 2025</span><span class="en">Diploma · 2025</span></div>
+      <h3 class="edu-degree"><span class="ar">الإدارة التنفيذية للمنظمات غير الربحية</span><span class="en">Executive Management for Non-Profits</span></h3>
+      <p class="edu-uni"><span class="ar">كليات ابن رشد</span><span class="en">Ibn Rushd Colleges</span></p>
+      <p class="edu-desc">
+        <span class="ar">برنامج تنفيذي متخصص في إدارة المنظمات غير الربحية والقطاع الخيري.</span>
+        <span class="en">Executive program specialized in managing non-profit organizations and the philanthropic sector.</span>
+      </p>
+      <div class="edu-status">
+        <span class="ar">مكتمل</span><span class="en">Completed</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 70px;" class="reveal">
+    <h3 class="section-subtitle">
+      <span class="ar">الشهادات والبرامج الاحترافية</span>
+      <span class="en">Professional Certifications</span>
+    </h3>
+
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-name">
+          <span class="ar">زمالة المستشار الشرعي (المالية الإسلامية)</span>
+          <span class="en">Sharia Advisor Fellowship (Islamic Finance)</span>
+        </div>
+        <div class="cert-issuer"><span class="ar">جمعية قضاء</span><span class="en">Qada Association</span></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-name">
+          <span class="ar">أخصائي الأوقاف</span>
+          <span class="en">Endowments (Awqaf) Specialist</span>
+        </div>
+        <div class="cert-issuer"><span class="ar">جمعية قضاء</span><span class="en">Qada Association</span></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-name">
+          <span class="ar">المحترف المعتمد في مؤشرات الأداء الرئيسية</span>
+          <span class="en">Certified KPI Professional</span>
+        </div>
+        <div class="cert-issuer"><span class="ar">معهد سيرتيغلوبال</span><span class="en">CertiGlobal Institute</span></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-name">
+          <span class="ar">أخصائي تطوير الأعمال</span>
+          <span class="en">Business Development Specialist</span>
+        </div>
+        <div class="cert-issuer"><span class="ar">أكاديمية الفوزان</span><span class="en">Al-Fozan Academy</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <h2 class="section-title"><span class="ar">الخبرة العملية</span><span class="en">Experience</span></h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">
+        <span class="ar">حالياً</span><span class="en">Present</span>
+      </div>
+      <h3 class="timeline-role">
+        <span class="ar">أخصائي الاستراتيجية والتميز</span>
+        <span class="en">Strategy & Excellence Specialist</span>
+      </h3>
+      <p class="timeline-org">
+        <span class="ar">مؤسسة المجدوعي الخيرية</span>
+        <span class="en">Al-Majdouie Charitable Foundation</span>
+      </p>
+      <p class="timeline-desc">
+        <span class="ar">مسند إليّ مجموعة من المهام الوظيفية، تشمل قيادة منظومة الحوكمة وأمانة مجلس الأمناء واللجان المنبثقة عنه.</span>
+        <span class="en">Entrusted with a portfolio of governance and strategy responsibilities — leading the governance ecosystem and serving as secretary to the board of trustees and its standing committees.</span>
+      </p>
+      <ul class="timeline-list">
+        <li>
+          <span class="ar">رئيس لجنة تطوير أعمال المؤسسة.</span>
+          <span class="en">Chair, Foundation Business Development Committee.</span>
+        </li>
+        <li>
+          <span class="ar">المسؤول عن منظومة الحوكمة.</span>
+          <span class="en">Lead of the institutional governance system.</span>
+        </li>
+        <li>
+          <span class="ar">أمين مجلس الأمناء.</span>
+          <span class="en">Secretary of the Board of Trustees.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">
+        <span class="ar">سابقاً</span><span class="en">Previous</span>
+      </div>
+      <h3 class="timeline-role">
+        <span class="ar">إشراف عام على المشاريع</span>
+        <span class="en">General Project Supervisor</span>
+      </h3>
+      <p class="timeline-org">
+        <span class="ar">مؤسسة العجيمي الخيرية</span>
+        <span class="en">Al-Ojaimi Charitable Foundation</span>
+      </p>
+      <p class="timeline-desc">
+        <span class="ar">الإشراف العام على عدد من مشاريع المؤسسة، وضمان تنفيذها وفق المعايير المعتمدة.</span>
+        <span class="en">General supervision over a portfolio of foundation projects, ensuring delivery in line with adopted standards.</span>
+      </p>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">
+        <span class="ar">سابقاً</span><span class="en">Previous</span>
+      </div>
+      <h3 class="timeline-role">
+        <span class="ar">تنظيم البرامج والمشاريع</span>
+        <span class="en">Programs & Projects Coordinator</span>
+      </h3>
+      <p class="timeline-org">
+        <span class="ar">جمعية تحفيظ الشرقية – فرع غرب الدمام</span>
+        <span class="en">Eastern Region Quran Memorization Society – West Dammam Branch</span>
+      </p>
+      <p class="timeline-desc">
+        <span class="ar">تنظيم برامج ومشاريع الفرع، والإشراف على إحدى المدارس التابعة للجمعية، مع المساهمة في تطوير الأداء التشغيلي.</span>
+        <span class="en">Organized branch programs and projects, supervised one of the society's schools, and contributed to operational performance development.</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="awards-section">
+    <div class="award-block reveal">
+      <h3><span class="ar">الجوائز والتقدير</span><span class="en">Awards & Recognition</span></h3>
+      <ul class="award-list">
+        <li>
+          <strong><span class="ar">جائزة التميز 2022</span><span class="en">Excellence Award 2022</span></strong>
+          <span class="ar">من جمعية تحفيظ الشرقية، للإشراف على إحدى المدارس التابعة للجمعية.</span>
+          <span class="en">Awarded by the Eastern Region Quran Society for supervising one of its affiliated schools.</span>
+        </li>
+        <li>
+          <strong><span class="ar">مسابقة وسام التميز 2023</span><span class="en">Order of Excellence 2023</span></strong>
+          <span class="ar">من جمعية تحفيظ الشرقية – فرع غرب الدمام.</span>
+          <span class="en">Awarded by the Eastern Region Quran Society — West Dammam Branch.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="award-block reveal">
+      <h3><span class="ar">المشاركات والتحدثات</span><span class="en">Speaking Engagements</span></h3>
+      <ul class="award-list">
+        <li>
+          <strong><span class="ar">متحدث</span><span class="en">Speaker</span></strong>
+          <span class="ar">ملتقى إنسان لحوكمة القطاع الخيري — دولة الكويت.</span>
+          <span class="en">Insan Forum for Charitable Sector Governance — State of Kuwait.</span>
+        </li>
+        <li>
+          <strong><span class="ar">ضيف ومتحدث</span><span class="en">Guest Speaker</span></strong>
+          <span class="ar">لقاء حوكمة الاستدامة — صالون إنسان.</span>
+          <span class="en">Sustainability Governance Session — Insan Salon.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title"><span class="ar">المهارات</span><span class="en">Core Competencies</span></h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill-category reveal">
+      <h3><span class="ar">الحوكمة وأمانة المجالس</span><span class="en">Governance & Board Secretariat</span></h3>
+      <p class="skill-desc">
+        <span class="ar">القدرة على تنظيم عمل المجلس ولجانه وصياغة محاضر تُحوَّل إلى قرارات قابلة للقياس.</span>
+        <span class="en">Organizing the work of boards and committees and drafting minutes that translate into measurable decisions.</span>
+      </p>
+      <ul class="skill-list">
+        <li><span class="ar">منظومات الحوكمة</span><span class="en">Governance Systems</span></li>
+        <li><span class="ar">أمانة المجالس</span><span class="en">Board Secretariat</span></li>
+        <li><span class="ar">صياغة المحاضر</span><span class="en">Minutes Drafting</span></li>
+        <li><span class="ar">مصفوفات الصلاحيات</span><span class="en">Authority Matrices</span></li>
+      </ul>
+    </div>
+
+    <div class="skill-category reveal">
+      <h3><span class="ar">الصياغة القانونية</span><span class="en">Legal & Policy Drafting</span></h3>
+      <p class="skill-desc">
+        <span class="ar">بناء وتطوير السياسات، وكتابة ومراجعة العقود والاتفاقيات.</span>
+        <span class="en">Building and developing policies; drafting and reviewing contracts and agreements.</span>
+      </p>
+      <ul class="skill-list">
+        <li><span class="ar">صياغة السياسات</span><span class="en">Policy Drafting</span></li>
+        <li><span class="ar">صياغة اللوائح</span><span class="en">Bylaws Drafting</span></li>
+        <li><span class="ar">مراجعة العقود</span><span class="en">Contract Review</span></li>
+        <li><span class="ar">الاتفاقيات</span><span class="en">Agreements</span></li>
+      </ul>
+    </div>
+
+    <div class="skill-category reveal">
+      <h3><span class="ar">التخطيط الاستراتيجي</span><span class="en">Strategic Planning</span></h3>
+      <p class="skill-desc">
+        <span class="ar">بناء الخطط، قياس الأداء، إدارة المؤشرات (KPI/OKR).</span>
+        <span class="en">Building plans, measuring performance, and managing KPIs and OKRs.</span>
+      </p>
+      <ul class="skill-list">
+        <li><span class="ar">بناء الخطط</span><span class="en">Plan Building</span></li>
+        <li><span class="ar">مؤشرات KPI</span><span class="en">KPIs</span></li>
+        <li><span class="ar">منهجية OKR</span><span class="en">OKRs</span></li>
+        <li><span class="ar">قياس الأداء</span><span class="en">Performance Measurement</span></li>
+        <li><span class="ar">التحليل الاستراتيجي</span><span class="en">Strategic Analysis</span></li>
+      </ul>
+    </div>
+
+    <div class="skill-category reveal">
+      <h3><span class="ar">القيادة والتحليل</span><span class="en">Leadership & Analysis</span></h3>
+      <p class="skill-desc">
+        <span class="ar">اتخاذ القرار، حل المشكلات، التفكير التصميمي.</span>
+        <span class="en">Decision-making, problem-solving, and design thinking.</span>
+      </p>
+      <ul class="skill-list">
+        <li><span class="ar">اتخاذ القرار</span><span class="en">Decision Making</span></li>
+        <li><span class="ar">حل المشكلات</span><span class="en">Problem Solving</span></li>
+        <li><span class="ar">التفكير التصميمي</span><span class="en">Design Thinking</span></li>
+        <li><span class="ar">القيادة التنفيذية</span><span class="en">Executive Leadership</span></li>
+      </ul>
+    </div>
+
+    <div class="skill-category reveal">
+      <h3><span class="ar">المهارات التقنية</span><span class="en">Technical Skills</span></h3>
+      <p class="skill-desc">
+        <span class="ar">إتقان أدوات الإنتاجية ولوحات المتابعة الرقمية.</span>
+        <span class="en">Proficient in productivity tools and digital dashboards.</span>
+      </p>
+      <ul class="skill-list">
+        <li>Power BI</li>
+        <li>Microsoft Office</li>
+        <li><span class="ar">لوحات المتابعة الرقمية</span><span class="en">Digital Dashboards</span></li>
+      </ul>
+    </div>
+
+    <div class="skill-category reveal">
+      <h3><span class="ar">الفقه وأصوله</span><span class="en">Sharia & Jurisprudence</span></h3>
+      <p class="skill-desc">
+        <span class="ar">تأسيس شرعي عميق يخدم الممارسة المؤسسية في القطاع الوقفي والخيري.</span>
+        <span class="en">Deep Sharia foundation serving institutional practice in the endowment and charitable sectors.</span>
+      </p>
+      <ul class="skill-list">
+        <li><span class="ar">أصول الفقه</span><span class="en">Usul al-Fiqh</span></li>
+        <li><span class="ar">فقه الأوقاف</span><span class="en">Waqf Jurisprudence</span></li>
+        <li><span class="ar">المالية الإسلامية</span><span class="en">Islamic Finance</span></li>
+        <li><span class="ar">التخريج الفقهي</span><span class="en">Legal Reasoning</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--bg-alt); border-block: 1px solid var(--line);">
+  <div class="section-header reveal">
+    <span class="section-num">05</span>
+    <h2 class="section-title"><span class="ar">العضويات وأمانة المجالس</span><span class="en">Memberships & Board Roles</span></h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="memberships-grid">
+    <div class="membership-block reveal">
+      <h3><span class="ar">الأدوار القيادية</span><span class="en">Leadership Roles</span></h3>
+      <p style="margin-bottom: 20px; color: var(--ink-soft); font-size: 16px; line-height: 1.7;">
+        <span class="ar">أمين مجلس أمناء <strong style="color: var(--ink);">مؤسسة علي بن إبراهيم المجدوعي وعائلته الخيرية</strong> ولجانه:</span>
+        <span class="en">Secretary of the Board of Trustees, <strong style="color: var(--ink);">Ali bin Ibrahim Al-Majdouie & Family Charitable Foundation</strong>, and its committees:</span>
+      </p>
+      <ul class="membership-list">
+        <li><strong><span class="ar">أمين اللجنة التنفيذية</span><span class="en">Secretary, Executive Committee</span></strong></li>
+        <li><strong><span class="ar">أمين لجنة المخاطر والمراجعة</span><span class="en">Secretary, Risk & Audit Committee</span></strong></li>
+        <li><strong><span class="ar">أمين لجنة المكافآت والترشيحات</span><span class="en">Secretary, Remuneration & Nominations Committee</span></strong></li>
+      </ul>
+    </div>
+
+    <div class="membership-block reveal">
+      <h3><span class="ar">العضويات والتمثيل</span><span class="en">Memberships & Representation</span></h3>
+      <ul class="membership-list">
+        <li>
+          <strong><span class="ar">عضو</span><span class="en">Member</span></strong>
+          <span class="ar">جمعية حوكمة الذكاء الاصطناعي.</span>
+          <span class="en">AI Governance Association.</span>
+        </li>
+        <li>
+          <strong><span class="ar">عضو ومستشار حوكمة</span><span class="en">Member & Governance Advisor</span></strong>
+          <span class="ar">ضمن الفريق التأسيسي لتأسيس مؤسسة يزدان الخيرية.</span>
+          <span class="en">Founding team of Yazdan Charitable Foundation.</span>
+        </li>
+        <li>
+          <strong><span class="ar">مستشار ومحوكم سياسات</span><span class="en">Policy Advisor & Reviewer</span></strong>
+          <span class="ar">جمعية وارف المعرفة، وجمعية طهور بالقصيم.</span>
+          <span class="en">Warif Al-Ma'rifa Society & Tahour Society in Qassim.</span>
+        </li>
+        <li>
+          <strong><span class="ar">ممثل</span><span class="en">Representative</span></strong>
+          <span class="ar">جمعية الحوكمة التعاونية في ملتقى إنسان لحوكمة العمل الخيري — الكويت.</span>
+          <span class="en">Cooperative Governance Society at Insan Forum, Kuwait.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="output" id="output">
+  <div class="section-header reveal">
+    <span class="section-num">06</span>
+    <h2 class="section-title"><span class="ar">النتاج العلمي والعملي</span><span class="en">Academic & Professional Output</span></h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="output-grid">
+    <div class="output-col reveal">
+      <h3>
+        <span class="num">A</span>
+        <span class="ar">النتاج العلمي</span><span class="en">Scholarly Output</span>
+      </h3>
+      <ul class="output-list">
+        <li>
+          <div>
+            <strong><span class="ar">بحث أكاديمي</span><span class="en">Academic Research</span></strong>
+            <span class="ar">مجلس نظارة الوقف — دراسة فقهية نظامية (رسالة ماجستير).</span>
+            <span class="en">"The Waqf Trustee Board — A Jurisprudential & Regulatory Study" (Master's thesis).</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong><span class="ar">إصدار مهني</span><span class="en">Professional Publication</span></strong>
+            <span class="ar">دليل حوكمة مجالس الأمناء (إصدار خاص).</span>
+            <span class="en">"Boards of Trustees Governance Manual" (Private edition).</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong><span class="ar">مشاركة علمية</span><span class="en">Conference Paper</span></strong>
+            <span class="ar">ورقة في ملتقى المؤسسات الخيرية بمنطقة الباحة.</span>
+            <span class="en">Paper presented at the Charitable Foundations Forum, Al-Baha Region.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="output-col reveal">
+      <h3>
+        <span class="num">B</span>
+        <span class="ar">النتاج العملي</span><span class="en">Professional Output</span>
+      </h3>
+      <ul class="output-list">
+        <li>
+          <div>
+            <strong><span class="ar">لوائح تنظيمية</span><span class="en">Regulatory Bylaws</span></strong>
+            <span class="ar">لوائح تنظيم عمل اللجنة التنفيذية، ولجنة المكافآت والترشيحات، ولجنة المراجعة والمخاطر.</span>
+            <span class="en">Operating bylaws for the Executive, Remuneration & Nominations, and Audit & Risk Committees.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong><span class="ar">مصفوفة صلاحيات مالية</span><span class="en">Financial Authority Matrix</span></strong>
+            <span class="ar">بناء مصفوفة الصلاحيات المالية للمؤسسة.</span>
+            <span class="en">Built the foundation's financial authority matrix.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong><span class="ar">تطوير السياسات</span><span class="en">Policy Development</span></strong>
+            <span class="ar">سياسة الرقابة والإشراف، سياسة البيانات الشخصية، سياسة مكافحة غسيل الأموال وتمويل الإرهاب، وغيرها.</span>
+            <span class="en">Oversight Policy, Personal Data Policy, AML/CFT Policy, and others.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong><span class="ar">تطوير آليات الاجتماعات</span><span class="en">Meeting Mechanics</span></strong>
+            <span class="ar">آليات عقد اجتماعات المجلس ولجانه، والمحاضر، ومتابعة تنفيذ القرارات والتوصيات.</span>
+            <span class="en">Frameworks for board and committee meetings, minutes, and execution tracking of resolutions.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="stats reveal">
+    <div class="stat">
+      <div class="stat-number">3+</div>
+      <div class="stat-label"><span class="ar">لوائح تنظيمية</span><span class="en">Regulatory Bylaws</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">5+</div>
+      <div class="stat-label"><span class="ar">سياسات مطورة</span><span class="en">Policies Developed</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">3</div>
+      <div class="stat-label"><span class="ar">لجان حوكمة</span><span class="en">Governance Committees</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">2</div>
+      <div class="stat-label"><span class="ar">جوائز تميز</span><span class="en">Excellence Awards</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="courses">
+  <div class="section-header reveal">
+    <span class="section-num">07</span>
+    <h2 class="section-title"><span class="ar">الدورات التدريبية</span><span class="en">Training & Development</span></h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="courses-tabs reveal">
+    <button class="course-tab active" onclick="showCourse('strategy', this)">
+      <span class="ar">الاستراتيجية</span><span class="en">Strategy</span>
+    </button>
+    <button class="course-tab" onclick="showCourse('leadership', this)">
+      <span class="ar">القيادة والإدارة</span><span class="en">Leadership</span>
+    </button>
+    <button class="course-tab" onclick="showCourse('finance', this)">
+      <span class="ar">المالية</span><span class="en">Finance</span>
+    </button>
+    <button class="course-tab" onclick="showCourse('self', this)">
+      <span class="ar">تطوير الذات</span><span class="en">Self-Development</span>
+    </button>
+  </div>
+
+  <div class="course-panel active reveal" id="course-strategy">
+    <div class="course-item"><span class="ar">المحترف المعتمد في التخطيط الاستراتيجي</span><span class="en">Certified Strategic Planning Professional</span></div>
+    <div class="course-item"><span class="ar">المحترف المعتمد في مؤشرات الأداء الرئيسية</span><span class="en">Certified KPI Professional</span></div>
+    <div class="course-item"><span class="ar">إدارة الأداء الاستراتيجي</span><span class="en">Strategic Performance Management</span></div>
+    <div class="course-item"><span class="ar">التحليل الاستراتيجي</span><span class="en">Strategic Analysis</span></div>
+    <div class="course-item"><span class="ar">التخطيط الاستراتيجي</span><span class="en">Strategic Planning</span></div>
+    <div class="course-item"><span class="ar">التخطيط للمبادرات</span><span class="en">Initiative Planning</span></div>
+    <div class="course-item"><span class="ar">برنامج تطبيقات منهجية مؤشرات الأهداف والنتائج (OKR)</span><span class="en">OKR Methodology Applied Program</span></div>
+    <div class="course-item"><span class="ar">برنامج سفير 2 — الاستراتيجية والتميز</span><span class="en">Safeer 2 — Strategy & Excellence Program</span></div>
+  </div>
+
+  <div class="course-panel reveal" id="course-leadership">
+    <div class="course-item"><span class="ar">القيادة الاستراتيجية والتنفيذية</span><span class="en">Strategic & Executive Leadership</span></div>
+    <div class="course-item"><span class="ar">مهارات المدير التنفيذي (CEO Skills)</span><span class="en">Chief Executive Officer Skills</span></div>
+    <div class="course-item"><span class="ar">جدارة القيادة الناجحة</span><span class="en">Successful Leadership Competency</span></div>
+    <div class="course-item"><span class="ar">جدارة حس المسؤولية</span><span class="en">Responsibility Awareness Competency</span></div>
+    <div class="course-item"><span class="ar">التفكير الإبداعي والابتكار في المنظمات غير الربحية</span><span class="en">Creative Thinking & Innovation in NPOs</span></div>
+    <div class="course-item"><span class="ar">التخطيط للمبادرات</span><span class="en">Initiative Planning</span></div>
+  </div>
+
+  <div class="course-panel reveal" id="course-finance">
+    <div class="course-item"><span class="ar">المحاسبة في الأوقاف</span><span class="en">Accounting in Endowments</span></div>
+    <div class="course-item"><span class="ar">مبادئ محاسبة الأوقاف</span><span class="en">Principles of Waqf Accounting</span></div>
+    <div class="course-item"><span class="ar">إعداد الموازنات التقديرية</span><span class="en">Budget Preparation</span></div>
+    <div class="course-item"><span class="ar">مهارات المنح والصرف</span><span class="en">Grants & Disbursement Skills</span></div>
+    <div class="course-item"><span class="ar">الصناديق والمحافظ الاستثمارية الوقفية</span><span class="en">Waqf Investment Funds & Portfolios</span></div>
+  </div>
+
+  <div class="course-panel reveal" id="course-self">
+    <div class="course-item"><span class="ar">الإنتاجية الشخصية</span><span class="en">Personal Productivity</span></div>
+    <div class="course-item"><span class="ar">إدارة الوقت</span><span class="en">Time Management</span></div>
+    <div class="course-item"><span class="ar">حل المشكلات</span><span class="en">Problem Solving</span></div>
+    <div class="course-item"><span class="ar">التفكير التصميمي</span><span class="en">Design Thinking</span></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2><span class="ar">لنتعاون معاً</span><span class="en">Let's Connect</span></h2>
+  <p>
+    <span class="ar">للتعاون البحثي، أو الاستشارات في مجال الحوكمة وأمانة المجالس، أو الشراكات في القطاع الخيري وغير الربحي — يسعدني التواصل.</span>
+    <span class="en">Open to research collaborations, governance and board secretariat advisory, and partnerships across the non-profit and philanthropic sectors.</span>
+  </p>
+
+  <div class="contact-links">
+    <a href="mailto:saifalzndi@gmail.com" class="contact-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      saifalzndi@gmail.com
+    </a>
+    <a href="tel:+966546104925" class="contact-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      0546104925
+    </a>
+    <a href="#" class="contact-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M22 9h-4v12h4V9zM10 9h4v2a3 3 0 016 0v10h-4v-8a2 2 0 00-4 0v8h-2V9z"/></svg>
+      <span class="ar">لينكدإن</span><span class="en">LinkedIn</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>
+    <span class="ar">© 2026 سيف بن حسين الغامدي · جميع الحقوق محفوظة</span>
+    <span class="en">© 2026 Saif bin Hussein Alghamdi · All Rights Reserved</span>
+  </p>
+  <p>
+    <span class="ar">آخر تحديث: 31 أكتوبر 2025م</span>
+    <span class="en">Last Updated: 31 October 2025</span>
+  </p>
+</footer>
+
+<script>
+  function toggleLang() {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-lang');
+    const next = current === 'ar' ? 'en' : 'ar';
+    html.setAttribute('data-lang', next);
+    html.setAttribute('lang', next);
+    html.setAttribute('dir', next === 'ar' ? 'rtl' : 'ltr');
+  }
+
+  function showCourse(id, btn) {
+    document.querySelectorAll('.course-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.course-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('course-' + id).classList.add('active');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
