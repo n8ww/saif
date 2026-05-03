@@ -1035,21 +1035,84 @@
     transform: translateY(-3px);
   }
 
-  footer {
-    padding: 40px 8vw;
+  footer.footer-elegant {
+    padding: 70px 8vw 50px;
     text-align: center;
-    background: var(--ink);
+    background: linear-gradient(180deg, var(--ink) 0%, #0d1813 100%);
     color: var(--bg);
-    font-family: var(--sans);
-    font-size: 13px;
-    opacity: 0.8;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
+    position: relative;
+    overflow: hidden;
   }
 
-  [data-lang="ar"] footer { font-family: var(--arabic-serif); font-size: 15px; }
+  footer.footer-elegant::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23b8893b' stroke-width='0.4' opacity='0.12'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z'/%3E%3Cpath d='M40 20L60 40L40 60L20 40Z'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  footer.footer-elegant > * { position: relative; z-index: 1; }
+
+  .footer-ornament {
+    width: 140px;
+    margin: 0 auto 36px;
+    color: var(--gold);
+  }
+
+  .footer-ornament svg { width: 100%; height: auto; }
+
+  .footer-quote {
+    font-family: var(--arabic-display);
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 500;
+    color: var(--bg);
+    margin-bottom: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+
+  [data-lang="en"] .footer-quote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .footer-tagline {
+    font-family: var(--arabic-display);
+    font-size: 14px;
+    color: var(--gold-soft);
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
+
+  [data-lang="en"] .footer-tagline {
+    font-family: var(--sans);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .footer-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 30px;
+    opacity: 0.5;
+  }
+
+  .footer-copyright {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--bg);
+    opacity: 0.5;
+    letter-spacing: 1.5px;
+  }
+
+  [data-lang="ar"] .footer-copyright { font-family: var(--arabic-display); font-size: 13px; letter-spacing: 0.5px; }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(40px); }
@@ -1131,7 +1194,6 @@
     .hero { padding: 100px 6vw 60px; }
     section { padding: 70px 6vw; }
     .lang-toggle { top: 20px; inset-inline-end: 20px; padding: 10px 18px; font-size: 12px; }
-    footer { flex-direction: column; }
   }
 
   @media (max-width: 600px) {
@@ -1794,21 +1856,38 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
       0546104925
     </a>
-    <a href="#" class="contact-btn">
+    <a href="https://www.linkedin.com/in/%D8%B3%D9%8A%D9%81-%D8%A7%D9%84%D8%BA%D8%A7%D9%85%D8%AF%D9%8A-348688211?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="contact-btn">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M22 9h-4v12h4V9zM10 9h4v2a3 3 0 016 0v10h-4v-8a2 2 0 00-4 0v8h-2V9z"/></svg>
       <span class="ar">لينكدإن</span><span class="en">LinkedIn</span>
     </a>
   </div>
 </section>
 
-<footer>
-  <p>
-    <span class="ar">© 2026 سيف بن حسين الغامدي · جميع الحقوق محفوظة</span>
-    <span class="en">© 2026 Saif bin Hussein Alghamdi · All Rights Reserved</span>
+<footer class="footer-elegant">
+  <div class="footer-ornament">
+    <svg viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="10" x2="35" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+      <path d="M50 2 L55 10 L50 18 L45 10 Z" fill="none" stroke="currentColor" stroke-width="0.8"/>
+      <circle cx="50" cy="10" r="1.5" fill="currentColor"/>
+      <line x1="65" y1="10" x2="100" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <p class="footer-quote">
+    <span class="ar">«حيث تجتمع الأصالةُ بالحوكمة، يُولَدُ الأثر»</span>
+    <span class="en">"Where tradition meets governance, impact is born"</span>
   </p>
-  <p>
-    <span class="ar">آخر تحديث: 31 أكتوبر 2025م</span>
-    <span class="en">Last Updated: 31 October 2025</span>
+
+  <p class="footer-tagline">
+    <span class="ar">صياغةُ الأنظمة · تفعيلُ الممارسة · صناعةُ الإرث</span>
+    <span class="en">Crafting Systems · Activating Practice · Building Legacy</span>
+  </p>
+
+  <div class="footer-divider"></div>
+
+  <p class="footer-copyright">
+    <span class="ar">© 2026 · سيف بن حسين الغامدي</span>
+    <span class="en">© 2026 · Saif bin Hussein Alghamdi</span>
   </p>
 </footer>
 
